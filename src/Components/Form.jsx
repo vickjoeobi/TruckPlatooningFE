@@ -33,18 +33,85 @@ const Form = () => {
 
     const postData = async (data) => {
         console.log("awaiting response", data)
+
+      var TruckName =  (data.TruckName === "") ? "Truck 1" : data.TruckName
+      var Distance_Covered = (data.Distance_Covered === "") ? 0 : Number(data.Distance_Covered)
+      var Match_of_Route =
+        data.Match_of_Route === "" ? 0 : Number(data.Match_of_Route)
+      var Fuel_Consumption =
+        data.Fuel_Consumption === "" ? 0 : Number(data.Fuel_Consumption)
+      var Body_Characteristics =
+        data.Body_Characteristics === "" ? 0 : Number(data.Body_Characteristics)
+      var Equipment_Sensors =
+        data.Equipment_Sensors === "" ? 0 : Number(data.Equipment_Sensors)
+      var Efficiency = data.Efficiency === "" ? 0 : Number(data.Efficiency)
+
+      var TruckName2 = data.TruckName === "" ? "Truck 2" : data.TruckName2
+      var Distance_Covered2 =
+        data.Distance_Covered2 === "" ? 0 : Number(data.Distance_Covered2)
+      var Match_of_Route2 =
+        data.Match_of_Route2 === "" ? 0 : Number(data.Match_of_Route2)
+      var Fuel_Consumption2 =
+        data.Fuel_Consumption2 === "" ? 0 : Number(data.Fuel_Consumption2)
+      var Body_Characteristics2 =
+        data.Body_Characteristics2 === ""
+          ? 0
+          : Number(data.Body_Characteristics2)
+      var Equipment_Sensors2 =
+        data.Equipment_Sensors2 === "" ? 0 : Number(data.Equipment_Sensors2)
+      var Efficiency2 = data.Efficiency2 === "" ? 0 : Number(data.Efficiency2)
+
+      var TruckName3 = data.TruckName3 === "" ? "Truck 3" : data.TruckName3
+      var Distance_Covered3 =
+        data.Distance_Covered3 === "" ? 0 : Number(data.Distance_Covered3)
+      var Match_of_Route3 =
+        data.Match_of_Route3 === "" ? 0 : Number(data.Match_of_Route3)
+      var Fuel_Consumption3 =
+        data.Fuel_Consumption3 === "" ? 0 : Number(data.Fuel_Consumption3)
+      var Body_Characteristics3 =
+        data.Body_Characteristics3 === ""
+          ? 0
+          : Number(data.Body_Characteristics3)
+      var Equipment_Sensors3 =
+        data.Equipment_Sensors3 === "" ? 0 : Number(data.Equipment_Sensors3)
+      var Efficiency3 = data.Efficiency3 === "" ? 0 : Number(data.Efficiency3)
+
+
+      var newData = {
+        TruckName: TruckName,
+        Distance_Covered: Distance_Covered,
+        Match_of_Route: Match_of_Route,
+        Fuel_Consumption: Fuel_Consumption,
+        Body_Characteristics: Body_Characteristics,
+        Equipment_Sensors: Equipment_Sensors,
+        Efficiency: Efficiency,
+        TruckName2: TruckName2,
+        Distance_Covered2: Distance_Covered2,
+        Match_of_Route2: Match_of_Route2,
+        Fuel_Consumption2: Fuel_Consumption2,
+        Body_Characteristics2: Body_Characteristics2,
+        Equipment_Sensors2: Equipment_Sensors2,
+        Efficiency2: Efficiency2,
+        TruckName3: TruckName3,
+        Distance_Covered3: Distance_Covered3,
+        Match_of_Route3: Match_of_Route3,
+        Fuel_Consumption3: Fuel_Consumption3,
+        Body_Characteristics3: Body_Characteristics3,
+        Equipment_Sensors3: Equipment_Sensors3,
+        Efficiency3: Efficiency3,
+      }
         const response = await axios.post(
           "https://truckplatooningapi.herokuapp.com/predict",
-          data
+          JSON.stringify(newData),
         )
         console.log(response)
-        setLeadTruck(response.data)
+      setLeadTruck(response.data)
     }
     
     const onSubmit = (data, e) => {
         e.target.reset();
         setData(data)
-        console.log(data)
+        console.log("jsonData", JSON.stringify(data))
 
         postData(data)
 
