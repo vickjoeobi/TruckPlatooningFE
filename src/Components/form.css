@@ -83,3 +83,16 @@ input[type="submit"]:active {
     transition: 0.3s all;
     top: 2px;
 }
+
+.error{
+    color: white;
+    font-weight: bold;
+    padding: 0%;
+    margin: 0%;
+
+}
+
+.error::before {
+    display: inline;
+    content: "⚠ ";
+}
