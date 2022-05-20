@@ -13,9 +13,14 @@ class Header extends Component {
         <div className='row banner'>
           <div className='banner-text'>
             <Fade bottom>
-              <h1 style={{
-                paddingTop: '5%',
-              }} className='responsive-headline'>Truck Platooning API</h1>
+              <h1
+                style={{
+                  paddingTop: "5%",
+                }}
+                className='responsive-headline'
+              >
+                Truck Platooning API
+              </h1>
             </Fade>
             <Fade bottom duration={1200}>
               <h3 style={{ fontWeight: "bold" }}>
@@ -46,6 +51,29 @@ class Header extends Component {
             This project was developed for the purpose of Autonomous Lab 6th
             Semester Electronic Engineering at Hoschule Hamm Lippstadt
           </h2>
+          <br />
+          <h3
+            style={{
+              fontWeight: "bold",
+              backgroundColor: "green",
+              padding: "10px",
+              paddingBottom: "20px",
+              paddingTop: "20px",
+              color: "white",
+              marginTop: "-40px",
+              fontSize: "30px",
+            }}
+          >
+            Powered By:{" "}
+            <span
+              style={{
+                fontWeight: "bold",
+                color: "#FFCF3D",
+              }}
+            >
+              Yahia, Mike, Nur & Vincent
+            </span>{" "}
+          </h3>
         </div>
       </header>
     )
